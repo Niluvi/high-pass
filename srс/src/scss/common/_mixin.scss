@@ -1,0 +1,132 @@
+@mixin marg0auto {
+    margin: 0 auto;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+// GRID
+@mixin grid12_g30 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+@mixin grid8_g30 {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 30px;
+}
+
+@mixin grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+@mixin grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@mixin grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+}
+// end-grid
+
+// Effects
+@mixin AftBefCent {
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin HoverFocusOpen {
+    transition-property: fill, background-color, outline, border-color, color, filter, opacity, visibility;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+}
+
+@mixin Active {
+    transition-property: fill, background-color, outline, border-color, color, filter, opacity, visibility;
+    transition-duration: .1s;
+    transition-timing-function: linear;
+}
+
+@mixin openEffects {
+    transition-property: opacity, visibility, transform, z-index;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+}
+
+// Buttons
+@mixin btnBord {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 19px;
+    padding: 12px 20px;
+    border: 3px solid $colorOrg;
+    background-color: transparent;
+     // -f-
+     &:focus-visible {
+        border: 3px solid $colorOrg;
+        background-color: $colorOrgTuscany;
+        @include HoverFocusOpen();  
+    }
+    // -h-
+    &:hover {
+        background-color: $colorOrg;
+        @include HoverFocusOpen();  
+    }
+    // -a-
+    &:active {
+        border: 3px solid $colorOrgGrenadier;
+        background-color: $colorOrgGrenadier;
+        @include Active();  
+    }
+
+    // media
+    @media (max-width: 731px) {
+        line-height: 15px;
+        padding: 9.5px 19.5px;
+    }
+} //
+
+@mixin btnBack {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 19px;
+    padding: 12px 19px;
+    outline: 3px solid transparent;
+    border: 3px solid transparent;
+    background-color: $colorOrg;
+    // -f-
+    &:focus-visible {
+        border: 3px solid $colorOrgGrenadier;
+        background-color: $colorOrg;
+        @include HoverFocusOpen();  
+    }
+    // -h-
+    &:hover {
+        border: 3px solid $colorOrgTuscany;
+        background-color: $colorOrgTuscany;
+        @include HoverFocusOpen();  
+    }
+    // -a-
+    &:active {
+        border: 3px solid $colorOrgGrenadier;
+        background-color: $colorOrgGrenadier;
+        @include Active();  
+    }
+
+    // media
+    @media (max-width: 731px) {
+        line-height: 15px;
+        padding: 9.5px 19.5px;
+    }
+} //

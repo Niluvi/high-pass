@@ -1,0 +1,12 @@
+// Common
+@import "./common/reset";
+@import "./common/common";
+// Header
+@import "./header/header.scss"; 
+// Main
+@import "./main/head";
+@import "./main/about";
+@import "./main/project";
+@import "./main/contact";
+// Footer
+@import "./footer/footer";

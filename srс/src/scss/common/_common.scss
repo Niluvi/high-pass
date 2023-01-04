@@ -1,0 +1,228 @@
+@import "../fonts";
+@import "../common/variables";
+@import "../common/mixin";
+// common styles _____________
+.body {
+    &-stop {
+        overflow: hidden;
+    }
+}
+
+.indent {
+    max-width: 1920px;
+    padding-left: 315px;
+    padding-right: 315px;
+    margin: 0 auto;
+}
+
+.h1 {
+    font-family: "TT", sans-serif;
+    font-weight: 700;
+    line-height: 104%;
+}
+
+.h2 {
+    line-height: 31px;
+}
+
+.h3 {
+    line-height: 100%;
+}
+
+.h2, .h3 {
+    font-family: "TT", sans-serif;
+    font-size: $size24;
+    font-weight: 700;
+}
+
+.color-white {
+    color: $colorWhite;
+}
+
+.color-black {
+    color: $colorBlack;
+}
+
+.gener {
+    font-family: "Roboto", sans-serif;
+    color: $colorWhite;
+    display: inline-block;
+    font-size: $size14;
+    line-height: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: $colorGryShaft;
+    padding: 6px 15px;
+    padding-top: 9px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+} //
+
+.opacity03 {
+    opacity: .3;
+}
+
+.modal-link {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    } // 
+    // -f-
+    &:focus-within {
+        outline: 3px solid $colorOrgTuscany;
+        @include HoverFocusOpen;
+        &::after {
+            background-color: rgba(0, 0, 0, 0.5);
+            @include HoverFocusOpen;
+        }
+    } // 
+    // -h- 
+    &:hover {
+        outline: 3px solid transparent;
+        @include HoverFocusOpen;
+        &::after {
+            background-color: rgba(0, 0, 0, 0.5);
+            @include HoverFocusOpen;
+            pointer-events: none;
+        }
+    } // 
+     // -a- 
+     &:active {
+        outline: 3px solid transparent;
+        @include Active;
+        &::after {
+            background-color: rgba(206, 67, 7, 0.5);
+            @include Active;
+        }
+    } // 
+}
+// close-common
+ .icon-close circle {
+    fill: $colorGryDove;
+ }
+
+ .icon-close rect {
+    fill: $colorWhite;
+ }
+//  ____Validation____
+// about
+.just-validate-error-label {
+    font-family: "Roboto", sans-serif;
+    font-size: $size10;
+    position: absolute;
+    top: 3px;
+    left: 23px;
+    @include HoverFocusOpen;
+} //
+//
+
+// CONTACT
+.common-applic {
+    font-family: "Roboto", sans-serif;
+    color: $colorBlack;
+    line-height: 100%;
+    width: 100%;
+    padding: 14px 22px;
+    border: 1px solid $colorGryMercury;
+    outline: none;
+    background-color: $colorGryMercury;
+    &::placeholder {
+        color: $colorGryDusty;
+    }
+    // -f-
+    &:focus-visible {
+        border: 1px solid $colorOrg;
+        @include HoverFocusOpen;
+    } //
+    // -h-
+    &:hover {
+        border: 1px solid $colorGryMercury;
+        @include HoverFocusOpen;
+        &::placeholder{
+        color: $colorOrg;
+        @include HoverFocusOpen;
+        }
+    } //
+    // error
+    &.just-validate-error-field {
+        border-color: $colorRedOrange;
+    }
+}
+
+// close
+.btn-close, .icon-close {
+    width: 20px;
+    height: 20px;
+}
+
+
+.btn-close {
+    @include HoverFocusOpen;
+    color: $colorGrySilver;
+    // -f-
+    &:focus-visible {
+        outline: transparent;
+        .icon-close {
+            color: $colorOrgTuscany;
+            @include HoverFocusOpen;
+        }
+    }
+    // -h-
+    &:hover {
+        .icon-close {
+            color: $colorOrg;
+            @include HoverFocusOpen;
+        }
+    }
+    // -a-
+    &:active {
+        .icon-close {
+            color: $colorOrgGrenadier;
+            @include Active;
+        }
+    }
+}
+
+// _____ max-width 1610px
+@media (max-width: 1611px) {
+    .indent {
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+}
+
+// _____ max-width 920px
+@media (max-width: 920px) {
+    .indent {
+        padding-left: 27px;
+        padding-right: 27px;
+    }
+}
+
+@media (max-width: 731px) {
+    .indent {
+        padding-left: 21px;
+        padding-right: 21px;
+    }
+
+    .gener {
+        font-size: $size12;
+        padding: 4px 8px;
+        padding-top: 5px;
+        right: 6px;
+        top: 6px;
+    } //
+
+    .h2, .h3 {
+        font-size: $size18;
+    }
+
+    .common-applic {
+        padding: 11.5px 22px;
+    }
+}

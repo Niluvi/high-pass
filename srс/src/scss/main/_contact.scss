@@ -1,0 +1,331 @@
+@import "../fonts";
+@import "../common/variables";
+@import "../common/mixin";
+
+.contact {
+    padding-top: 27px;
+    padding-bottom: 67px;
+    &__content {
+        @include grid12_g30;
+    }
+
+    &__h2 {
+        margin-bottom: 22px;
+    }
+
+    &__h3 {
+        font-weight: 400;
+        line-height: 100%;
+        margin-bottom: 5px; 
+    }
+
+    // LEFT
+    &__left {
+        grid-column: 8 span;
+        position: relative;
+        min-height: 460px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__inform {
+        max-width: 410px;
+        height: 100%;
+        padding: 175px 50px 150px 60px;
+        background-color: rgba(32, 32, 32, 0.85);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition-property: opacity, visibility;
+        transition-duration: .6s;
+        transition-timing-function: linear;
+    }
+
+    &__inform-close {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+&__close-btn, &__close-img {
+    width: 20px;
+    height: 20px;
+    color: $colorGryDove;
+}
+
+&__close-btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    align-items: center;
+    text-align: center;
+    // -f-
+    &:focus-visible {
+        outline: none;
+        .contact__close-img {
+            color: $colorOrgTuscany;
+            @include HoverFocusOpen;
+        }
+    }
+    // -h-
+    &:hover {
+        .contact__close-img {
+            color: $colorOrg;
+            @include HoverFocusOpen;
+        }
+}
+    // -a-
+    &:active {
+        .contact__close-img {
+            color: $colorOrgGrenadier;
+            @include Active;
+        } 
+    }
+}
+
+&__street {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: $colorGrySilver;
+    line-height: 175%;
+}
+
+&__tel {
+    font-family: "TT", sans-serif;
+    color: $colorWhite;
+    display: inline-block;
+    align-items: center;
+    @include HoverFocusOpen;
+    @include Active;
+    // -f-
+    &:focus-visible {
+        outline: none;
+        color: $colorOrgTuscany;
+        @include HoverFocusOpen;
+        .contact__tel-icon {
+            fill: $colorOrgTuscany;
+            @include HoverFocusOpen;
+        }
+    }
+    // -h-
+    &:hover {
+        color: $colorOrg;
+        @include HoverFocusOpen;
+        .contact__tel-icon {
+            fill: $colorOrg;
+            @include HoverFocusOpen;
+        }
+    }
+    // -a-
+    &:active {
+        color: $colorOrgGrenadier;
+        @include Active;
+        .contact__tel-icon {
+            fill: $colorOrgGrenadier;
+            @include Active;
+        }
+    }
+}
+
+&__tel-icon {
+    fill: $colorWhite;
+    opacity: 0.7;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -6px;
+    @include HoverFocusOpen;
+    @include Active;
+}
+
+    // RIGHT
+    &__right {
+        grid-column: 4 span;
+        margin-top: -7px;
+    }
+
+    &__text {
+        font-family: "Roboto", sans-serif;
+        color: $colorGryDusty;
+        max-width: 410px;
+        line-height: 136%;
+        margin-bottom: 14px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        display: block;
+        width: 100%;
+        margin-bottom: 21px;
+        position: relative;
+    }
+
+    &-mb-commit {
+        margin-bottom: 17px;
+    }
+
+    &__commit {
+        min-height: 150px;
+    }
+
+    &__btn-app {
+        @include btnBack;
+        color: $colorWhite;
+        max-width: 126px;
+    }
+
+    // ______
+    //  media 1171px
+    @media (max-width: 1171px) {
+        padding-bottom: 68px;
+        &__content {
+            @include grid8_g30;
+        }
+
+        // left
+        &__left {
+            grid-column: 5 span;
+        }
+         
+        &__inform {
+            max-width: 870px;
+            width: 100%;
+            min-height: 157px;
+            height: max-content;
+            padding: 25px 30px;
+            background-color: rgba(32, 32, 32, 0.85);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: auto;
+        }
+
+        &__street {
+            display: inline-block;
+            max-width: 310px;
+        }
+
+        &__tel {
+            margin-left: 10px;
+        }
+        // right
+        &__right {
+            grid-column: 3 span;
+        }
+    } // end 1171px
+    // ______
+    // media 920px
+    @media (max-width: 920px) {
+        &__content {
+            @include grid6;
+        }
+
+        // left
+        &__left {
+            grid-column: 6 span;
+        }
+
+        &__street {
+            max-width: 425px;
+        }
+
+        &__tel {
+            margin-left: 0;
+        }
+
+        // right
+        &__right {
+            grid-column: 4 span;
+        }
+
+        &__text {
+            max-width: 460px;
+        }
+    } // end 920px
+
+    // media 731px
+    @media (max-width: 731px) {
+        padding-top: 10px;
+        padding-bottom: 49px;
+        &__container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__h2 {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__content {
+            @include grid2;
+            row-gap: 32px;
+        }
+
+        &__left, &__right {
+            grid-column: 2 span;
+        }
+
+        // left
+        &__left {
+            min-height: 472px;
+        }
+
+        &__inform {
+            padding: 28px 20px;
+            padding-bottom: 12px;
+        }
+
+        &__h3 {
+            margin-bottom: 13px;
+        }
+
+        &__street {
+            font-size: $size14;
+            line-height: 132%;
+        }
+
+        &__tel {
+            display: block;
+            margin-top: 8px;
+            margin-left: -3px;
+        }
+
+        // right
+        &__right {
+            padding-left: 21px;
+            padding-right: 21px;
+        }
+
+        &__text {
+            line-height: 120%;
+            margin-bottom: 16px;
+        }
+
+        &__label {
+            margin-bottom: 18px;
+        }
+
+        &__btn-app {
+            padding: 9px 10.5px;
+            max-width: 115px;
+        }
+
+    } // end 730px
+    
+} // end-contact
+
+// map
+[class*="ground-pane"] {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+[class*="copyrights-pane"] {
+    display: none;
+}

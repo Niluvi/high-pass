@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Roboto";
+    src: local('Roboto'),
+        url('font/RobotoBold.woff2') format('woff2'),
+        url('font/RobotoBold.woff') format('woff');
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: local('Roboto'),
+        url('font/RobotoRegular.woff2') format('woff2'),
+        url('font/RobotoRegular.woff') format('woff');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+}
+
+@font-face {
+    font-family: "TT";
+    src: local('TTFirsNeue'), local('TT-Firs-Neue'),
+        url('font/TTFirsNeueBold.woff2') format('woff2'),
+        url('font/TTFirsNeueBold.woff') format('woff');
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+}
+
+@font-face {
+    font-family: "TT";
+    src: local('TTFirsNeue'), local('TT-Firs-Neue'),
+        url('../font/TTFirsNeueRegular.woff') format('woff2'),
+        url('../font/TTFirsNeueRegular.woff') format('woff');
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+}
